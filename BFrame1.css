@@ -1,4 +1,5 @@
 #ColorTitle {animation: change 6s linear 0s infinite;}@keyframes change {0% {color:#333;}25% {color:#ff0;}50% {color:#f60;}75% {color:#cf0;}100% {color:#f00;}}
+.Title1{font-size:96px}
 body{background-size:100%}{font-size:96px}
 .BlockL{height:50%;width:50%;float:left}
 .BlockR{height:50%;width:50%;float:right}
