@@ -1,4 +1,4 @@
-/*Frame Version 1.1;Updated On 2.24*/
+/*Frame Version 1.2;Updated On 2.24*/
 #ColorTitle {animation: change 6s linear 0s infinite;}@keyframes change {0% {color:#333;}25% {color:#ff0;}50% {color:#f60;}75% {color:#cf0;}100% {color:#f00;}}
 .Title1{font-size:104px}
 .Title2{font-size:72px}
@@ -9,3 +9,4 @@ body{background-size:100%}
 .BlockR{height:50%;width:50%;float:right}
 .BlockM{height:65%;width:100%;float:center}
 .XBlockM{height:25%;width:100%;float:center}
+.XBlockMPics{height:50%;width:45%;float:center}
