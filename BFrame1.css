@@ -1,5 +1,9 @@
+/*Frame Version 1.1;Updated On 2.24*/
 #ColorTitle {animation: change 6s linear 0s infinite;}@keyframes change {0% {color:#333;}25% {color:#ff0;}50% {color:#f60;}75% {color:#cf0;}100% {color:#f00;}}
-.Title1{font-size:96px}
+.Title1{font-size:104px}
+.Title2{font-size:72px}
+.ButtonM{font-size:40px;color:fuchsia}
+.BlockPics{width:100%;height:100%}
 body{background-size:100%}{font-size:96px}
 .BlockL{height:50%;width:50%;float:left}
 .BlockR{height:50%;width:50%;float:right}
