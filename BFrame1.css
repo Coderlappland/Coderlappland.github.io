@@ -7,6 +7,6 @@
 body{background-size:100%}
 .BlockL{height:50%;width:50%;float:left}
 .BlockR{height:50%;width:50%;float:right}
-.BlockM{height:65%;width:100%;float:center}
-.XBlockM{height:25%;width:100%;float:center}
-.XBlockMPics{height:50%;width:45%;float:center}
+.BlockM{height:65%;width:100%}
+.XBlockM{height:25%;width:100%}
+.XBlockMPics{height:50%;width:45%}
