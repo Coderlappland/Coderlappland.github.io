@@ -1,6 +1,6 @@
 /*Frame Version 1.3;Updated On 2.24*/
 #ColorTitle {animation: change 6s linear 0s infinite;}@keyframes change {0% {color:#333;}25% {color:#ff0;}50% {color:#f60;}75% {color:#cf0;}100% {color:#f00;}}
-#ColorBG {animation: change 5s linear 0s Infinite;}@keyframes change {0% {color:#000 size:54px;} 50% {color:#fff size:108px;}}
+/*#ColorBG {animation: change 5s linear 0s Infinite;}@keyframes change {0% {color:#000 size:54px;} 50% {color:#fff size:108px;}}*/
 .Title1{font-size:104px}
 .Title2{font-size:72px}
 .ButtonM{font-size:40px;color:fuchsia}
