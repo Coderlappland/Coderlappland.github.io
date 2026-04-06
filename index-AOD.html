@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta author="Angels Of Delusion,NanGong">
+    <title>Angels Of Delusion</title>
+    <style>
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            background: url('https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvYy81ODU0QUU2NjhERjM3RDU0L0lRQ2U2SGNtRk9jeFFvT3F5UTZtUS1GWkFWMWptSjJkeG9HZzBHeE1wT1JmeGtN.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-card {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .title-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 1.25rem;
+        }
+
+        .main-title {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1E2A3E, #2C3E50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.05);
+            margin-bottom: 0.5rem;
+        }
+
+        .subhead {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            color: #2c3e50;
+            font-weight: 500;
+            opacity: 0.85;
+            letter-spacing: 0.3px;
+        }
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .intro-text {
+            flex: 2;
+            min-width: 220px;
+        }
+
+        .intro-highlight {
+            flex: 1.2;
+            min-width: 200px;
+            background: rgba(44, 62, 80, 0.08);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(2px);
+            border-left: 5px solid #2c3e50;
+        }
+
+        .intro-text p {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            margin-bottom: 1rem;
+            color: #1e2a36;
+            font-weight: 450;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            color: #1e2a36;
+        }
+
+        .feature-list li::before {
+            content: "✨";
+            font-size: 1.2rem;
+        }
+
+        .highlight-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1e2a3e;
+            border-left: 3px solid currentColor;
+            padding-left: 0.75rem;
+        }
+
+        .stats {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            flex: 1;
+            min-width: 70px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2c3e50;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5d6f83;
+        }
+        .bg-config-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.03);
+            padding: 0.7rem;
+            border-radius: 2rem;
+            color: #2c3e50;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .bg-config-note code {
+            background: #eef2f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 30px;
+            font-family: monospace;
+            font-size: 0.75rem;
+        }
+        @media (max-width: 640px) {
+            .hero-card {
+                padding: 1.5rem;
+            }
+            .intro-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .intro-highlight {
+                border-left: none;
+                border-top: 3px solid #2c3e50;
+                border-radius: 1.2rem;
+            }
+            .stats {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .stat-item {
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        @media (min-width: 1400px) {
+            .hero-card {
+                padding: 3.5rem 3rem;
+            }
+            .main-title {
+                font-size: 4.5rem;
+            }
+        }
+        .soft-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+            transition: 0.2s;
+        }
+        .soft-link:hover {
+            color: #1a252f;
+            border-bottom-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-card">
+    <!-- Title -->
+    <div class="title-section">
+        <h1 class="main-title">⭐ 妄想天使 ⭐</h1>
+        <div class="subhead">「羽」你幻想，万「千」可「爱」！</div>
+    </div>
+
+    <!--Introducing -->
+    <div class="intro-grid">
+        <div class="intro-text">
+            <p><strong>🎯 我们的核心目标</strong> ——为整个新艾利都，带去最真实的妄想！</p>
+            <p>🌱 这一目标融合了爱芮，千夏，南宫羽三个人的梦想。</p>
+            <p>💡 我们相信，只要梦想家们遍布整个世界，即使是妄想，也触手可及。下面列出了为何要喜欢妄想天使的三大理由：</p>
+            <ul class="feature-list">
+                <li><strong>可爱</strong> – 千夏负责可爱</li>
+                <li><strong>美好</strong> – 爱芮负责美好</li>
+                <li><strong>完美</strong> – 南宫负责完美</li>
+                <li><strong>备注</strong> -
+ 南宫又在乱写！
+            </ul>
+        </div>
+        <div class="intro-highlight">
+            <div class="highlight-title">📌 目标一览</div>
+            <p style="font-size: 0.95rem; margin-bottom: 0.75rem;">到XXXX年，登上星环，让整个新艾利都见证我们的妄想！当前阶段：</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">115w</div>
+                    <div class="stat-label">梦想家人数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2位</div>
+                    <div class="stat-label">合作伙伴</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2760w</div>
+                    <div class="stat-label">送出鸡蛋数</div>
+                </div>
+            </div>
+            <div style="margin-top: 1.2rem;">
+                <span style="background: #ffffffaa; padding: 0.2rem 0.7rem; border-radius: 40px; font-size: 0.75rem;">✨ 妄想天使应援群: 713055507</span>
+            </div>
+        </div>
+    </div>
+    
+            <div class="intro-text">
+            妄想天使歌曲一览
+            <ul class="feature-list">
+                <li><strong>天使加载中…</strong> <a href="https://music.163.com/m/song?id=3355611650&=undefined">–点击这里</a></li>
+                <li><strong>把心跳变成节奏</strong> <a href="https://music.163.com/m/song?id=3344795940&=undefined">–点击这里</a></li>
+                <li><strong>复梦天使</strong> <a href="https://music.163.com/m/song?id=3343287820&=undefined">–点击这里</a></li>
+                <li><strong>妄想色心跳</strong> <a href="https://music.163.com/m/song?id=3362538431&=undefined">-点击这里</a>
+            </ul>
+        </div>
+
+    <!-- EX -->
+    <div style="margin-top: 1rem;">
+        <p style="font-size: 0.95rem; line-height: 1.5; background: rgba(255,255,240,0.5); padding: 1rem; border-radius: 1.2rem;">
+            ⚡ <strong>注:喜欢「妄想天使」不会被电。</strong> 
+        </p>
+    </div>
+
+    <!-- Background Img -->
+    <div class="bg-config-note">
+ 当前背景图片: 来自 <code>个人OneDrive</code><br>
+ Last Update:2026/4/6
+ HTML Source By NanGongYu
+    </div>
+</div>
+</body>
+</html>
